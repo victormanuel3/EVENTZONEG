@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <link rel="stylesheet" href="../slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="../slick-1.8.1/slick/slick-theme.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../slick-1.8.1/slick/slick.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="noticias.css">
+    <!-- Iconscout Link For Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- ----------------------- -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="noticias.js" defer></script>
+</head>
+
+<body>
+    <h1 class="noticias-recientes">Noticias más recientes</h1>
+    <section>
+        <div class="slider">
+            <div class="container-noticia">
+                <div class="noticia">
+                    <img src="../Imagenes/Blade.png">
+                    <div class="informacion-noticia">
+                        <h1>Marvel's Blade: Los detalles del nuevo juego de Arkane Studios</h1>
+                        <p>Todos los detalles del nuevo juego que promete cautivar a los fans de la acción y la caza de
+                            vampiros.</p>
+                        <div class="fecha-autor">
+                            <p><i class="fa-regular fa-calendar-days"></i>Actualizado hace 2 Horas.</p>
+                            <p><i class="fa-solid fa-user"></i>Joel Mesas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-noticia">
+                <div class="noticia">
+                    <img src="../Imagenes/Lego.png">
+                    <div class="informacion-noticia">
+                        <h1>LEGO Fortnite: Pico Histórico en la Fusión Juguetes-Videojuegos</h1>
+                        <p>Descubre cómo LEGO Fortnite marca un hito en la convergencia entre juguetes y videojuegos.
+                        </p>
+                        <div class="fecha-autor">
+                            <p><i class="fa-regular fa-calendar-days"></i>Actualizado hace 5 Horas.</p>
+                            <p><i class="fa-solid fa-user"></i>Víctor Manuel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-noticia">
+                <div class="noticia">
+                    <img src="../Imagenes/gta.png">
+                    <div class="informacion-noticia">
+                        <h1>"GTA VI: El Futuro de Rockstar y lo que sabemos hasta ahora"</h1>
+                        <p>Descubre lo que sabemos hasta ahora sobre este juego que podría revolucionar la industria.
+                        </p>
+                        <div class="fecha-autor">
+                            <p><i class="fa-regular fa-calendar-days"></i>Actualizado hace 1 día.</p>
+                            <p><i class="fa-solid fa-user"></i>Eric Baena</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-noticia">
+                <div class="noticia">
+                    <img src="../Imagenes/gta.png">
+                    <div class="informacion-noticia">
+                        <h1>"GTA VI: El Futuro de Rockstar y lo que sabemos hasta ahora"</h1>
+                        <p>Descubre lo que sabemos hasta ahora sobre este juego que podría revolucionar la industria.
+                        </p>
+                        <div class="fecha-autor">
+                            <p><i class="fa-regular fa-calendar-days"></i>Actualizado hace 1 día.</p>
+                            <p><i class="fa-solid fa-user"></i>Eric Baena</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="separador-titulo-noticias">
+        <div class="separador"></div>
+        <h2 class="noticias-por-apartado">NOTICIAS POR APARTADO</h2>
+    </div>
+    <!-- barra de búsqueda -->
+    <div class="posicionar-barra-busqueda">
+        <form action="" method="post" class="searchform cf">
+            <input type="search" name="etiqueta" placeholder="Filtrar noticia">
+            <button type="button" id="btn-search">Buscar</button>
+        </form>
+    </div>
+    <!-- cuadrados de búsqueda -->
+    <div class="centrar-container-noticias-buscadas">
+        <div class="container-noticias-buscadas">
+            <!--
+            <div class="noticia-busqueda">
+                <div class="info-noticia-busqueda">
+                    <p class="fecha-noticia-busqueda">Actualizado hace 2 días.</p>
+                    <h1>La nueva consola XBOX Series X</h1>
+                    <span>#Consolas</span>
+                    <p class="descripcion-noticia-busqueda">Aquí tienes toda la información oficial sobre la nueva
+                        consola de
+                        Microsoft.</p>
+                </div>
+                <div class="imagen-noticia-busqueda">
+                    <img src="../Imagenes/noticia-consola1.png">
+                </div>
+            </div>
+            -->
+        </div>
+    </div>
+    <!------------------------------  FORMULARIO  ---------------------------------------------->
+    <dialog id="modal-noticia">
+        <form class="formulario-insertar-noticia" action="" method="post">
+            <i class="uil uil-multiply" id="btn-cerrar-modal"></i>
+            <div class="container-crear-noticia">
+                <div class="titulo-insertar-noticia">
+                    Añadir noticia
+                </div>
+                <div class="input-group">
+                    <input type="text" name="titulo-noticia" required>
+                    <label>título</label>
+                </div>
+                <div class="textarea-group">
+                    <textarea id="my-text" rows="5" name="descripcion-noticia" required
+                        placeholder="descripción de la noticia..."></textarea>
+                    <p id="result"></p>
+                </div>
+                <!--input select-->
+                <div class="wrapper">
+                    <div class="select-btn">
+                        <span>Etiqueta noticia...</span>
+                        <i class="uil uil-angle-down"></i>
+                    </div>
+                    <div class="content">
+                        <div class="search">
+                            <i class="uil uil-search"></i>
+                            <input spellcheck="false" type="text" placeholder="Search">
+                        </div>
+                        <ul class="options"></ul>
+                    </div>
+                </div>
+                <!--input image-->
+                <div class="container-input-image">
+                    <div class="imageArea">
+                        <input type="file" class="fileInp" name="portada" accept="image/*"
+                            onchange="getFileInputEvent(event)" hidden>
+                        <i class="uil uil-image-plus"></i>
+                        <p> Subir portada</p>
+                        <img src="" class="imagen-portada">
+                    </div>
+                </div>
+                <!--botón subir-->
+                <div class="input-añadir">
+                    <input type="button" value="Añadir">
+                </div>
+            </div>
+        </form>
+    </dialog>
+    <!------------------------------------------------------------------------------------------>
+    <button id="btn-abrir-modal">
+        <span>Añadir noticia</span>
+        <svg class="svg" viewBox="0 0 512 512">
+            <path
+                d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
+            </path>
+        </svg>
+    </button>
+</body>
+
+</html>
